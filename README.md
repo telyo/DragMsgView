@@ -16,3 +16,11 @@ dependencies {
 	}
 ```
 
+### 使用
+
+```java
+mDragBall = new DragMsgView(this);
+
+mDragBall.bingTargetView(target, "99+");
+```
+
