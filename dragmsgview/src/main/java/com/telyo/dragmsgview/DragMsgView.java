@@ -260,7 +260,6 @@ public class DragMsgView extends View {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (mState != STATE_DISMISS) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
                     d = (float) Math.hypot(event.getRawX() - mBubbleCenterX, event.getRawY() - mBubbleCenterY);
                     if (d < mBubbleRadius + maxD / 4) {
                         //当指尖坐标在圆内的时候，才认为是可拖拽的
@@ -273,7 +272,6 @@ public class DragMsgView extends View {
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (mState != STATE_DEFAULT) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
                     mBubbleCenterX = event.getRawX();
                     mBubbleCenterY = event.getRawY();
                     //计算气泡圆心与黏连小球圆心的间距
@@ -297,7 +295,6 @@ public class DragMsgView extends View {
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                getParent().requestDisallowInterceptTouchEvent(false);
                 if (mState == STATE_DRAG) {//正在拖拽时松开手指，气泡恢复原来位置并颤动一下
                     setBubbleRestoreAnim();
                 } else if (mState == STATE_MOVE) {//正在移动时松开手指
