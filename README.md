@@ -33,6 +33,28 @@ public void onBindViewHolder(MyHolder holder, int position) {
      mDragBall.bingTargetView(dmv, "99+");
   }
 
+mDragBall.setmOnBubbleStateListener(new DragMsgView.OnBubbleStateListener() {
+     @Override
+     public void onDrag() {
+                
+     }
+
+     @Override
+     public void onMove() {
+
+     }
+
+     @Override
+     public void onRestore() {
+
+     }
+
+     @Override
+     public void onDismiss() {
+                //todo
+     }
+  });
+
 ```
 
 
